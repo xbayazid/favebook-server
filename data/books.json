@@ -1,0 +1,58 @@
+[
+    {
+        "name": "The Last House on Needless Street",
+        "img": "https://i.ibb.co/LvPcSbX/book-1.png",
+        "author": "Catriona Ward",
+        "category": "Fiction",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "Fair Rosaline",
+        "img": "https://i.ibb.co/7Gn5frp/book-3.png",
+        "author": "Natasaha",
+        "category": "Romance",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "The Convenant of water",
+        "img": "https://i.ibb.co/sQqFxCd/book-2.png",
+        "author": "Abraham Verghese",
+        "category": "Philosophy",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "The Unfortunate side effects heartbreak and Magic",
+        "img": "https://i.ibb.co/gVLTNmt/book-4.png",
+        "author": "Breanne Randall",
+        "category": "Thriller",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "The Last House on Needless Street",
+        "img": "https://i.ibb.co/LvPcSbX/book-1.png",
+        "author": "Catriona Ward",
+        "category": "Science",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "Fair Rosaline",
+        "img": "https://i.ibb.co/7Gn5frp/book-3.png",
+        "author": "Natasaha",
+        "category": "Biography",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "The Convenant of water",
+        "img": "https://i.ibb.co/sQqFxCd/book-2.png",
+        "author": "Abraham Verghese",
+        "category": "Poetry",
+        "authorId": "654727dfa1d30f2016b48010"
+    },
+    {
+        "name": "The Unfortunate side effects heartbreak and Magic",
+        "img": "https://i.ibb.co/gVLTNmt/book-4.png",
+        "author": "Breanne Randall",
+        "category": "Classic",
+        "authorId": "654727dfa1d30f2016b48010"
+    }
+]
