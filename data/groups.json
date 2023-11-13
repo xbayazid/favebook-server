@@ -1,0 +1,98 @@
+[
+    {
+        "groupName": "Science Book Discussion Group",
+        "groupImage" : "https://i.ibb.co/G26CcFW/3607741.jpg" ,
+        "message": [
+            {
+                "name": "Md Rakib",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "rakib@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Abir",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "abir@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Nadim",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "nadim@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            }
+        ]
+    },
+    {
+        "groupName": "Fiction Book Discussion Group",
+        "groupImage" : "https://i.ibb.co/G26CcFW/3607741.jpg" ,
+        "message": [
+            {
+                "name": "Md Rakib",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "rakib@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Abir",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "abir@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Nadim",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "nadim@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            }
+        ]
+    },
+    {
+        "groupName": "Biography Book Discussion Group",
+        "groupImage" : "https://i.ibb.co/G26CcFW/3607741.jpg" ,
+        "message": [
+            {
+                "name": "Md Rakib",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "rakib@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Abir",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "abir@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Nadim",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "nadim@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            }
+        ]
+    },
+    {
+        "groupName": "Romance Book Discussion Group",
+        "groupImage" : "https://i.ibb.co/G26CcFW/3607741.jpg" ,
+        "message": [
+            {
+                "name": "Md Rakib",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "rakib@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Abir",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "abir@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            },
+            {
+                "name": "Md Nadim",
+                "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+                "email": "nadim@gamil.com",
+                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, expedita. Voluptate, ab fugit voluptas modi in itaque possimus doloremque soluta dignissimos maiores rem magni accusantium aspernatur, eius, voluptates corrupti. Ipsa, blanditiis, perferendis ducimus magnam, unde deserunt cum nisi quibusdam fuga provident corrupti praesentium eius earum fugit. Libero nulla culpa recusandae."
+            }
+        ]
+    }
+]

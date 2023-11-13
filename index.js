@@ -50,6 +50,7 @@ async function run() {
     const booksCollection = client.db("favebook").collection("books");
     const authorsCollection = client.db("favebook").collection("authors");
     const usersCollection = client.db("favebook").collection("users");
+    const groupsCollection = client.db("favebook").collection("groups");
 
 
     app.get('/jwt', async(req, res) => {
@@ -166,6 +167,45 @@ async function run() {
       res.send(result);
     });
 
+
+    // groups related code
+    app.get("/groups", async(req, res) => {
+      await client.connect();
+      const query = {};
+      const group = await groupsCollection.find(query).toArray();
+      res.send(group);
+    })
+
+    app.get("/groups/:id", async(req, res) => {
+      await client.connect();
+      const id = req.params.id;
+      const query = {_id : new ObjectId(id)};
+      const group = await groupsCollection.findOne(query);
+      res.send(group);
+    })
+
+    app.put('/groups/:id', async( req, res ) => {
+      await client.connect();
+      const id = req.params.id;
+      const message = req.body;
+      const filter = {_id: new ObjectId(id)};
+      const group = await groupsCollection.findOne(filter);
+      const messages = group.message;
+      const newMessage = [...messages, message];
+      const option = {upsert : true};
+      const updatedDoc = {
+        $set: {
+          message: newMessage,
+        },
+      };
+      const result = await groupsCollection.updateOne(
+        filter,
+        updatedDoc,
+        option
+      );
+      res.send(result);
+    })
+
     // temporary to update a field
   //   app.get('/addIsRent', async(req, res) => {
   //     await client.connect();
@@ -179,6 +219,7 @@ async function run() {
   //     const result = await usersCollection.updateMany(filter, updatedDoc, option);
   //     res.send(result);
   // })
+  
 
 
 
