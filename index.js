@@ -106,7 +106,29 @@ async function run() {
       const post = req.body;
       const result = await postsCollection.insertOne(post);
       res.send(result);
-    })
+    });
+
+    app.put("/posts/:id/comments", async(req, res) =>{
+      await client.connect();
+      const id = req.params.id;
+      const comment = req.body;
+      const filter = { _id: ObjectId(id) }
+      const post = await postsCollection.findOne(filter);
+      const comments = post.comments;
+      const newComments = [...comments, comment];
+      const option = { upsert: true };
+      const updatedDoc = {
+        $set: {
+          comments: newComments,
+        },
+      };
+      const result = await postsCollection.updateOne(
+        filter,
+        updatedDoc,
+        option
+      );
+      res.send(result);
+    });
 
     app.get('/categories', async (req, res) =>{
       await client.connect();
@@ -173,6 +195,31 @@ async function run() {
       }
       const result = await usersCollection.insertOne(user);
       res.send(result);
+    });
+
+    app.get("/user/admin/:email", async (req, res) => {
+      await client.connect();
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      res.send({ isAdmin: user?.role === "admin" });
+    });
+
+
+    app.get("/user/author/:email", async (req, res) => {
+      await client.connect();
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      res.send({ isOwner: user?.role === "author" });
+    });
+
+    app.get("/user/request/:email", async (req, res) => {
+      await client.connect();
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      res.send({ isOwner: user?.role === "authorRequest" });
     });
 
     app.put("/users/update/:email", async(req, res) =>{
