@@ -88,6 +88,14 @@ async function run() {
     app.get("/posts", async(req, res) => {
       await client.connect();
       const email = req.query.email;
+      const query = {};
+      const post = await postsCollection.find(query).toArray();
+      res.send(post)
+    })
+
+    app.get("/myPosts", async(req, res) => {
+      await client.connect();
+      const email = req.query.email;
       const query = {email: email};
       const post = await postsCollection.find(query).toArray();
       res.send(post)
@@ -166,6 +174,50 @@ async function run() {
       const result = await usersCollection.insertOne(user);
       res.send(result);
     });
+
+    app.put("/users/update/:email", async(req, res) =>{
+      await client.connect();
+      const action = req.query.action;
+      const email = req.params.email;
+      const filter = {email: email}
+      const user = await usersCollection.findOne(filter);
+      const option = { upsert: true };
+      let updatedDoc = {};
+      if(action === 'request'){
+        updatedDoc = {
+          $set: {
+            role: 'authorRequest',
+          },
+        };
+      }
+      else if(action === 'confirm'){
+        updatedDoc = {
+          $set: {
+            role: 'author',
+          },
+        };
+      }
+      else if(action === 'delete'){
+        updatedDoc = {
+          $set: {
+            role: 'Member',
+          },
+        };
+      }
+      else{
+        updatedDoc = {
+          $set: {
+            role: 'Member',
+          },
+        };
+      }
+      const result = await usersCollection.updateOne(
+        filter,
+        updatedDoc,
+        option
+      );
+      res.send({acknowledged: true});
+    })
 
 
     // groups related code
