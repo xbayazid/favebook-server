@@ -305,6 +305,13 @@ async function run() {
       const query = {_id : new ObjectId(id)};
       const group = await groupsCollection.findOne(query);
       res.send(group);
+    });
+
+    app.post("/group", async (req, res) => {
+      await client.connect();
+      const group = req.body;
+      const result = await groupsCollection.insertOne(group);
+      res.send(result);
     })
 
     
