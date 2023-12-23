@@ -108,11 +108,20 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/posts/:id/comments", async (req, res) => {
+      await client.connect();
+      const id = req.params.id;
+      const query = {_id : new ObjectId(id)};
+      const post = await postsCollection.findOne(query);
+      const comments = await post.comments;
+      res.send(comments);
+    })
+
     app.put("/posts/:id/comments", async(req, res) =>{
       await client.connect();
       const id = req.params.id;
       const comment = req.body;
-      const filter = { _id: ObjectId(id) }
+      const filter = { _id: new ObjectId(id) }
       const post = await postsCollection.findOne(filter);
       const comments = post.comments;
       const newComments = [...comments, comment];
@@ -159,12 +168,27 @@ async function run() {
       }
     });
 
+    app.post("/book", async (req, res) => {
+      await client.connect();
+      const book = req.body;
+      const result = await booksCollection.insertOne(book);
+      res.send(result);
+    })
+
     app.get("/authors", async (req, res) => {
       await client.connect();
       const query = {};
       const authors = await authorsCollection.find(query).toArray();
       res.send(authors);
     });
+
+    app.post("/authors", async (req, res) => {
+      await client.connect();
+      const author = req.body;
+      console.log(author)
+      const result = await authorsCollection.insertOne(author);
+      res.send(result); 
+    })
 
     // user Related Code
 
@@ -283,6 +307,30 @@ async function run() {
       res.send(group);
     })
 
+    
+
+    app.put('/joinGroup/:id', async( req, res ) => {
+      await client.connect();
+      const id = req.params.id;
+      const member = req.body;
+      const filter = {_id: new ObjectId(id)};
+      const group = await groupsCollection.findOne(filter);
+      const members = group.members;
+      const newMembers = [...members, member];
+      const option = {upsert : true};
+      const updatedDoc = {
+        $set: {
+          members: newMembers,
+        },
+      };
+      const result = await groupsCollection.updateOne(
+        filter,
+        updatedDoc,
+        option
+      );
+      res.send(result);
+    });
+
     app.put('/groups/:id', async( req, res ) => {
       await client.connect();
       const id = req.params.id;
@@ -305,17 +353,18 @@ async function run() {
       res.send(result);
     })
 
-    // temporary to update a field
+  // temporary to update a field
   //   app.get('/addIsRent', async(req, res) => {
   //     await client.connect();
   //     const filter = {};
   //     const option = { upsert : true };
   //     const updatedDoc = {
   //         $set: {
-  //             userImage: 'https://i.ibb.co/jJWpBrY/men-1.png'
+  //             description: "A book club for the moment, and also for the ages. 📚 If you're looking for fellow bookworms to disc.",
+  //             members: []
   //         }
   //     }
-  //     const result = await usersCollection.updateMany(filter, updatedDoc, option);
+  //     const result = await groupsCollection.updateMany(filter, updatedDoc, option);
   //     res.send(result);
   // })
   

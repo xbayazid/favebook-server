@@ -1,26 +1,27 @@
 [
     {
-        "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
+        "name": "Natasaha",
+        "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+        "email": "natasha@gmail.com"
+    },
+    {
+        "name": "Catriona Ward",
+        "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+        "email": "catriona@gmail.com"
+    },
+    {
+        "name": "Breanne Randall",
+        "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+        "email": "breanne@gmail.com"
+    },
+    {
+        "name": "Abraham Verghese",
+        "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+        "email": "abraham@gmail.com"
     },
     {
         "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
-    },
-    {
-        "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
-    },
-    {
-        "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
-    },
-    {
-        "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
-    },
-    {
-        "name": "William Shakespeare",
-        "img": "https://i.ibb.co/8cyRwdk/author-4.png"
+        "img": "https://i.ibb.co/8cyRwdk/author-4.png",
+        "email": "william@gmail.com"
     }
 ]
