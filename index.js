@@ -51,6 +51,7 @@ async function run() {
     const authorsCollection = client.db("favebook").collection("authors");
     const usersCollection = client.db("favebook").collection("users");
     const groupsCollection = client.db("favebook").collection("groups");
+    const meetingCollection = client.db("favebook").collection("meeting");
 
 
     app.get('/jwt', async(req, res) => {
@@ -235,7 +236,7 @@ async function run() {
       const email = req.params.email;
       const query = { email: email };
       const user = await usersCollection.findOne(query);
-      res.send({ isOwner: user?.role === "author" });
+      res.send({ isAuthor: user?.role === "author" });
     });
 
     app.get("/user/request/:email", async (req, res) => {
@@ -243,7 +244,15 @@ async function run() {
       const email = req.params.email;
       const query = { email: email };
       const user = await usersCollection.findOne(query);
-      res.send({ isOwner: user?.role === "authorRequest" });
+      res.send({ isRequest: user?.role === "authorRequest" });
+    });
+
+    app.get("/user/member/:email", async (req, res) => {
+      await client.connect();
+      const email = req.params.email;
+      const query = { email: email };
+      const user = await usersCollection.findOne(query);
+      res.send({ isMember: user?.role === "Member" });
     });
 
     app.put("/users/update/:email", async(req, res) =>{
@@ -255,9 +264,12 @@ async function run() {
       const option = { upsert: true };
       let updatedDoc = {};
       if(action === 'request'){
+        const meet = req.body;
         updatedDoc = {
           $set: {
             role: 'authorRequest',
+            meet: meet.meet,
+            bookName: meet.bookName,
           },
         };
       }
@@ -305,6 +317,13 @@ async function run() {
       const query = {_id : new ObjectId(id)};
       const group = await groupsCollection.findOne(query);
       res.send(group);
+    });
+
+    app.post("/group", async (req, res) => {
+      await client.connect();
+      const group = req.body;
+      const result = await groupsCollection.insertOne(group);
+      res.send(result);
     })
 
     
@@ -351,7 +370,63 @@ async function run() {
         option
       );
       res.send(result);
+    });
+
+    // meeting related code
+    app.get("/meeting", async (req, res) => {
+      await client.connect()
+      const email = req.query.email;
+      const query = {email}
+      const result = await meetingCollection.find(query).toArray()
+      res.send(result);
+    });
+
+    app.get("/myMeeting", async (req, res) => {
+      await client.connect()
+      const email = req.query.email;
+      const query = {authorEmail: email}
+      const result = await meetingCollection.find(query).toArray()
+      res.send(result);
+    });
+
+    app.post("/meeting", async (req, res) => {
+      await client.connect();
+      const meeting = req.body;
+      const result = await meetingCollection.insertOne(meeting);
+      res.send(result)
+    });
+
+    app.put("/meeting/:id", async( req, res ) => {
+      await client.connect();
+      const meeting = req.body;
+      const id = req.params.id;
+      const filter = {_id : new ObjectId(id)}
+      const option = {upsert : true};
+      const updatedDoc = {
+        $set: {
+          date: meeting.date,
+          time: meeting.time,
+          status: 'true',
+        },
+      };
+      const result = await meetingCollection.updateOne(
+        filter,
+        updatedDoc,
+        option
+      );
+      res.send(result);
+      
     })
+
+    app.delete("/meeting/:id", async (req, res) => {
+      await client.connect()
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const result = await meetingCollection.deleteOne(filter);
+      res.send(result);
+    })
+
+
 
   // temporary to update a field
   //   app.get('/addIsRent', async(req, res) => {
